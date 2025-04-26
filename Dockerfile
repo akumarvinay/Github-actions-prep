@@ -9,7 +9,7 @@ RUN mkdir -p /usr/src/app
 RUN ls /usr/src
 ENV APP_HOME=/usr/src/app
 
-COPY app/*.jar $APP_HOME/app.jar
+COPY app/bankapp-0.0.1-SNAPSHOT.jar $APP_HOME/app.jar
 
 WORKDIR $APP_HOME
 
