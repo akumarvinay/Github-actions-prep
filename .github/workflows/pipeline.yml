@@ -65,7 +65,7 @@ jobs:
     needs: testCase
     steps:
       - name: checkout source code
-        uses: actions/checkout@4
+        uses: actions/checkout@v4
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
@@ -74,4 +74,3 @@ jobs:
           cache: maven
       - name: maven package creation
         run: mvn package --file pom.xml
-        
