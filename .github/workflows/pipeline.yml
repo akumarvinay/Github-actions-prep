@@ -21,6 +21,7 @@ jobs:
   
   security-check:
     runs-on: ubuntu-latest
+    needs: compile # so that security-check job runs after compile job
     steps:
       - name: checkout source code
         uses: actions/checkout@v4
