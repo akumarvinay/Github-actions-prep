@@ -124,5 +124,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: vinay/bank-app:${{ github.run_number }}-${{ github.sha }}
+          tags: akumarvinay/bankapp:${{ github.run_number }}-${{ github.sha }}
       
