@@ -33,7 +33,7 @@ jobs:
         run: trivy fs --output trivy-report.json --format table .
 
       - name: Installing git leaks
-        run: sudo apt install git-leaks -y
+        run: sudo apt install gitleaks -y
       - name: running git leaks
         run: git-leaks detect source . -r git-leaks-report.json -f json
 
