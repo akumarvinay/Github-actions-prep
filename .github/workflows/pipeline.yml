@@ -22,6 +22,9 @@ jobs:
   security-check:
     runs-on: ubuntu-latest
     steps:
+      - name: checkout source code
+        uses: actions/checkout@v4
+
       - name: Installing trivy setup
         run: |
           sudo apt-get install wget apt-transport-https gnupg lsb-release
@@ -29,11 +32,13 @@ jobs:
           echo deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main | sudo tee -a /etc/apt/sources.list.d/trivy.list
           sudo apt-get update -y
           sudo apt-get install -y trivy
+
       - name: running Trivy
         run: trivy fs --output trivy-report.json --format table .
 
       - name: Installing git leaks
         run: sudo apt install gitleaks -y
+        
       - name: running git leaks
         run: gitleaks detect source . -r git-leaks-report.json -f json
 
