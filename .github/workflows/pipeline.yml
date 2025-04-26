@@ -96,7 +96,7 @@ jobs:
           path: target/*.jar # Adjust the path to your artifact as needed
 
   build-and-upload-docker-image:
-    runs-on: slef-hosted-vinay
+    runs-on: self-hosted-vinay
     needs:  Build-and-sonarScan
     steps:
       - name: source code checkout
@@ -119,5 +119,5 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: vinay/bank-app:${{ github.run_number }}-{{ github.sha}}
+          tags: vinay/bank-app:${{ github.run_number }}-{{ github.sha }}
       
