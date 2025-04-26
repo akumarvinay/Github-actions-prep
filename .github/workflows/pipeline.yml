@@ -35,5 +35,5 @@ jobs:
       - name: Installing git leaks
         run: sudo apt install gitleaks -y
       - name: running git leaks
-        run: git-leaks detect source . -r git-leaks-report.json -f json
+        run: gitleaks detect source . -r git-leaks-report.json -f json
 
