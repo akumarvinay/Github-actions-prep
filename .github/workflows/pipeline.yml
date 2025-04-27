@@ -125,7 +125,7 @@ jobs:
           file: ./Dockerfile
           context: .
           push: true
-          tags: akumarvinay/bankapp:${{ github.run_number }}-${{ github.sha }}
+          tags: akumarvinay/bankapp:latest #${{ github.run_number }}-${{ github.sha }}
       
   deployment-into-kubernetes:
     runs-on: self-hosted-vinay
